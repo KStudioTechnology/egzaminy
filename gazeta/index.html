@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gazeta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            gazeta codzienna
+        </h1>
+        <nav>
+            <a href="#">start</a>
+            <a href="#">aktualności</a>
+            <a href="#">kontakt</a>
+            <a href="#">o nas</a>
+        </nav>
+    </header>
+        <main>
+              <h1>Aktualności</h1>
+
+                <div class="accordion">
+                    <div class="accordion-header">1. Szczepimy seniorów</div>
+                    <div class="accordion-content">
+                    <p>Od piątku osoby powyżej 80 lat mogą zarejestrować się na szczepienie przeciw COVID-19. 
+                    Do wyboru mają niemal sześć tysięcy przychodni, w których od 25 stycznia będą odbywać się szczepienia. 
+                    Termin można zarezerwować telefonicznie, przez internet lub w punkcie szczepień. 
+                    Na szczepienie przeciw COVID-19 od piątku mogą się umawiać seniorzy powyżej 80. roku życia, 
+                    a tydzień później ruszą zapisy dla osób, które ukończyły 70 lat. 
+                    Szczepienia dla seniorów rozpoczną się 25 stycznia.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">2. Stoch i Kubacki na podium w Bischofshofen</div>
+                    <div class="accordion-content">
+                    <p>W środę w Bischofshofen odbędzie się ostatni konkurs 69. Turnieju Czterech Skoczni. 
+                    Po trzech zawodach prowadzi Kamil Stoch z dużą przewagą nad Dawidem Kubackim i Norwegiem Halvorem Egnerem Granerudem. 
+                    Skocznia im. Paula Ausserleitnera w Bischofshofen, gdzie tradycyjnie kończy się TCS, 
+                    jest szczęśliwa dla reprezentantów Polski, którzy wygrali tu trzy z ostatnich czterech konkursów - 
+                    Stoch w 2017 i 2018, a Kubacki - w ubiegłym roku.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">3. Dzień Babci 2021. Pomysły na prezent i historia święta w Polsce</div>
+                    <div class="accordion-content">
+                    <p>Dzień Babci to wyjątkowe święto, w którym zewsząd płyną życzenia skierowane właśnie w stronę babć. 
+                    Najmłodsi własnoręcznie lub z drobną pomocą wykonują piękne laurki, 
+                    a nieco starsze wnuczęta z pewnością mają przygotowany niejeden prezent. 
+                    Tego dnia w szkołach często przygotowywane są także różne przedstawienia, 
+                    a oryginalne scenariusze często wywołują u dziadków łzy wzruszenia.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">4. Zaginione / znalezione</div>
+                    <div class="accordion-content">
+                    <p>W Oławie, na ulicy Lipowej w piątek wieczorem znalazłam czarnego małego kotka. 
+                    Jest zadbany i ufny, ma czerwoną obróżkę. Telefon 600100200.</p>
+                    </div>
+                </div>
+        </main>
+    <footer>
+    <p>&copy; 2025 BlogHub. Wszelkie prawa zastrzeżone.</p> 
+    <p>Stronę przygotował: Krzysztof Stojczyk</p>
+    </footer>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach(acc => {
+    const header = acc.querySelector(".accordion-header");
+
+    header.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      accordions.forEach(other => {
+        if (other !== acc) {
+          other.classList.remove("active");
+        }
+      });
+
+      acc.classList.toggle("active");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    accordions.forEach(acc => {
+      if (!acc.contains(e.target)) {
+        acc.classList.remove("active");
+      }
+    });
+  });
+});
+
+
+
+    </script>
+</body>
+</html>
